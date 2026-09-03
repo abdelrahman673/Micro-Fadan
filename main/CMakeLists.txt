@@ -1,0 +1,28 @@
+idf_component_register(
+    SRCS
+        "main.cpp"
+        "sensors/soil_moisture.cpp"
+        "sensors/ds18b20_sensor.cpp"
+        "sensors/water_level.cpp"
+        "sensors/aht21b_sensor.cpp"
+        "sensors/bh1750_sensor.cpp"
+        "sensors/sensor_manager.cpp"
+        "actuators/pump_controller.cpp"
+        "actuators/airflow_controller.cpp"
+        "actuators/actuator_manager.cpp"
+        "normalization/normalizer.cpp"
+    INCLUDE_DIRS
+        "include"
+        "include/sensors"
+        "include/actuators"
+        "include/normalization"
+    REQUIRES
+        esp_driver_gpio
+        esp_driver_i2c
+        esp_adc
+        esp_timer
+        esp_rom
+        freertos
+        log
+)
+
